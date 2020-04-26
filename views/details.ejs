@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digimon-app</title>
+    <link rel="stylesheet" href="../public/.css">
+</head>
+<body>
+    <header><h1>digimon-app</h1></header>
+    <main>
+            <div>
+                <img src="<%=digimon.img%>" alt="">
+                <p><%=digimon.name%></p>
+                <p><%=digimon.level%></p>
+                <form action="/update/<%=digimon.id%>?_method=put" method="post">
+                    <input type="text" value="<%=digimon.name%>" name="name">
+                    <input type="text" value="<%=digimon.img%>" name="img">
+                    <input type="text" value="<%=digimon.level%>" name="level">
+                    <button type="submit">update</button>
+                </form>
+                <form action="/delete/<%=digimon.id%>?_method=delete" method="post">
+                    <button type="submit">delete</button>
+                </form>
+            </div>
+    </main>
+</body>
+</html>

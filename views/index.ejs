@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digimon-app</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <header><h1>digimon-app</h1></header>
+    <main>
+        <%digimons.forEach(ele=>{%>
+            <div>
+                <img src="<%=ele.img%>" alt="">
+                <p><%=ele.name%></p>
+                <p><%=ele.level%></p>
+                <form action="/favorite" method="post">
+                    <input type="hidden" value="<%=ele.name%>" name="name">
+                    <input type="hidden" value="<%=ele.img%>" name="img">
+                    <input type="hidden" value="<%=ele.level%>" name="level">
+                    <button type="submit">add to favorite</button>
+                </form>
+            </div>
+        <%})%>
+    </main>
+</body>
+</html>
